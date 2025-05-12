@@ -1,0 +1,60 @@
+{
+  "name": "node-test-jest-compat",
+  "version": "1.0.0",
+  "description": "Run your existing Jest suites on Node's built-in runner.",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/esm/index.d.ts",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js",
+      "types": "./dist/esm/index.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "test": "npm run build && node --test --experimental-test-module-mocks --experimental-test-coverage --test-update-snapshots --import ./dist/esm/index.js 'test/**/*.test.js'",
+    "test:only": "npm run build && node --test --experimental-test-module-mocks --experimental-test-coverage --test-update-snapshots --test-only --import ./dist/esm/index.js test/snapshot.test.js",
+    "build": "npm run build:esm && npm run build:cjs",
+    "build:esm": "tsc -p tsconfig.json",
+    "build:cjs": "tsc -p tsconfig.cjs.json",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SimoneGianni/node-test-jest-compat.git"
+  },
+  "keywords": [
+    "jest",
+    "node",
+    "test",
+    "testing",
+    "compatibility",
+    "adapter"
+  ],
+  "author": "",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/SimoneGianni/node-test-jest-compat/issues"
+  },
+  "homepage": "https://github.com/SimoneGianni/node-test-jest-compat#readme",
+  "dependencies": {
+    "expect": "^29.7.0",
+    "jest-mock": "^29.7.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.12",
+    "@types/node": "^22.0.0",
+    "typescript": "^5.4.2"
+  },
+  "peerDependencies": {
+    "node": ">=18.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
