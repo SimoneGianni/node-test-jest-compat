@@ -38,12 +38,12 @@ const {
 
 // Set timeout for tests (no-op implementation for compatibility)
 const setTimeout = (timeout: number) => {
-  console.warn('Warning: jest.setTimeout() is not supported in node-test-jest-compat. Node.js test runner uses a different timeout mechanism.');
+  console.warn('Warning: jest.setTimeout() is not supported in @simonegianni/node-test-jest-compat. Node.js test runner uses a different timeout mechanism.');
 };
 
 // Reset the module registry
 const resetModules = () => {
-  console.warn('Warning: jest.resetModules() is only partially supported in node-test-jest-compat. Module cache clearing is limited.');
+  console.warn('Warning: jest.resetModules() is only partially supported in @simonegianni/node-test-jest-compat. Module cache clearing is limited.');
   moduleRegistry.resetAllModules();
 };
 

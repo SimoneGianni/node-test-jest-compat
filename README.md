@@ -1,4 +1,4 @@
-# node-test-jest-compat
+# @simonegianni/node-test-jest-compat
 
 Run your existing Jest suites on Node's built-in test runner without having to rewrite your tests.
 
@@ -16,13 +16,13 @@ Run your existing Jest suites on Node's built-in test runner without having to r
 Just install the package as a development dependency in your project using your preferred package manager:
 
 ```bash
-npm install --save-dev node-test-jest-compat
+npm install --save-dev @simonegianni/node-test-jest-compat
 
-yarn add --dev node-test-jest-compat
+yarn add --dev @simonegianni/node-test-jest-compat
 
-pnpm add --save-dev node-test-jest-compat
+pnpm add --save-dev @simonegianni/node-test-jest-compat
 
-bun add --dev node-test-jest-compat
+bun add --dev @simonegianni/node-test-jest-compat
 ```
 
 ## Code changes
@@ -33,7 +33,7 @@ If you import or require 'jest' in your test files, you need to change it to imp
 // Before
 import 'jest';
 // After
-import 'node-test-jest-compat';
+import '@simonegianni/node-test-jest-compat';
 ```
 
 ## What you do not need to do
@@ -52,22 +52,22 @@ node --test
 
 See [Node.js documentation](https://nodejs.org/api/test.html#test_test) for more information on the test runner.
 
-If you are not importing `node-test-jest-compat` in your test files, you can run the tests with the following command:
+If you are not importing `@simonegianni/node-test-jest-compat` in your test files, you can run the tests with the following command:
 
 ```bash
-node --test --import node-test-jest-compat
+node --test --import @simonegianni/node-test-jest-compat
 ```
 
 Or, if you are using CommonJS modules, you can run the tests with the following command:
 
 ```bash
-node --test --require node-test-jest-compat
+node --test --require @simonegianni/node-test-jest-compat
 ```
 
 For TypeScript projects, you can easily stack ts-node:
 
 ```bash
-node --test --import ts-node/esm --import node-test-jest-compat
+node --test --import ts-node/esm --import @simonegianni/node-test-jest-compat
 ```
 
 However note that there are various issues with ts-node, ESM and loaders, as the NodeJS team is evolving those APIs and they are not yet stable. So, pre-compiling your TypeScript files to JavaScript and running them with Node's test runner is recommended.
@@ -128,8 +128,8 @@ The following Jest features are *NOT* supported:
 
 The package is designed to work with both CommonJS and ESM modules. You can use it in your existing projects without any issues.
 
-- If you are using ESM, you can import the package using `import { test, expect } from 'node-test-jest-compat'`.
-- If you are using CommonJS, you can import the package using `const { test, expect } = require('node-test-jest-compat')`.
+- If you are using ESM, you can import the package using `import { test, expect } from '@simonegianni/node-test-jest-compat'`.
+- If you are using CommonJS, you can import the package using `const { test, expect } = require('@simonegianni/node-test-jest-compat')`.
 
 ## Implementation Details
 
