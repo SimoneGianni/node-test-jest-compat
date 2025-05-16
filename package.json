@@ -1,6 +1,6 @@
 {
   "name": "node-test-jest-compat",
-  "version": "1.0.0",
+  "version": "0.0.2",
   "description": "Run your existing Jest suites on Node's built-in runner.",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -24,6 +24,7 @@
     "build:cjs": "tsc -p tsconfig.cjs.json",
     "prepublishOnly": "npm run build"
   },
+  "author": "Simone Gianni",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/SimoneGianni/node-test-jest-compat.git"
@@ -36,7 +37,6 @@
     "compatibility",
     "adapter"
   ],
-  "author": "",
   "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/SimoneGianni/node-test-jest-compat/issues"
@@ -44,7 +44,8 @@
   "homepage": "https://github.com/SimoneGianni/node-test-jest-compat#readme",
   "dependencies": {
     "expect": "^29.7.0",
-    "jest-mock": "^29.7.0"
+    "jest-mock": "^29.7.0",
+    "tsmatchers": "^5.0.2"
   },
   "devDependencies": {
     "@types/jest": "^29.5.12",

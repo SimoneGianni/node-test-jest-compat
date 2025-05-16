@@ -47,16 +47,30 @@ import 'node-test-jest-compat';
 You can run your tests using Node's built-in test runner by running the following command:
 
 ```bash
-node --test --import node-test-jest-compat 
-```
-
-For TypeScript projects, you can use ts-node:
-
-```bash
-node --test --import ts-node/register --import node-test-jest-compat
+node --test
 ```
 
 See [Node.js documentation](https://nodejs.org/api/test.html#test_test) for more information on the test runner.
+
+If you are not importing `node-test-jest-compat` in your test files, you can run the tests with the following command:
+
+```bash
+node --test --import node-test-jest-compat
+```
+
+Or, if you are using CommonJS modules, you can run the tests with the following command:
+
+```bash
+node --test --require node-test-jest-compat
+```
+
+For TypeScript projects, you can easily stack ts-node:
+
+```bash
+node --test --import ts-node/esm --import node-test-jest-compat
+```
+
+However note that there are various issues with ts-node, ESM and loaders, as the NodeJS team is evolving those APIs and they are not yet stable. So, pre-compiling your TypeScript files to JavaScript and running them with Node's test runner is recommended.
 
 ## Supported Jest Features
 
