@@ -1,4 +1,3 @@
-// Implementation of Jest's snapshot testing using Node.js test runner's snapshot functionality
 import { test } from 'node:test';
 import path from 'node:path';
 import fs from 'node:fs';
@@ -16,6 +15,9 @@ const defaultSerializer = (value: any): string => {
 // Set up the snapshot path resolver to match Jest's behavior
 function setupSnapshotPathResolver() {
   if (resolverSet) return;
+  if (!test.snapshot) {
+    return;
+  }
   
   test.snapshot.setResolveSnapshotPath((testPath: string|undefined) => {
     if (!testPath) {

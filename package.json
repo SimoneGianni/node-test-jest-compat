@@ -1,6 +1,6 @@
 {
   "name": "@simonegianni/node-test-jest-compat",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Run your existing Jest suites on Node's built-in runner.",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
